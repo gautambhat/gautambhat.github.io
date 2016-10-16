@@ -27,19 +27,17 @@
       padding:0.4em;}
   </style>
 
-<script>
-</script>
   <body style="margin:0;font-size:1.1em;padding:0;font-family:sans-serif;">
     <div style="padding:0.4em;background-image:url('grey.png');background-repeat:repeat;">
       <div style="width:17em;height:12em;float:right;"><a target="_blank" href="https://www.facebook.com/DivyamHansariaPhotography/" title="Credits: Divyam Hansaria Photography"><img alt="Gautam Bhat" src="gautambhat.github.io/IMG_0938.jpg" style="max-width:16.5em;"></a></div>
-      <div style="float:left;padding:3px; "><a href="http://stackoverflow.com/users/2474507/bhatgautam"><span id="stackoverfow_id"><img src="http://stackoverflow.com/users/flair/2474507.png?theme=clean" width="208" height="58" alt="profile for bhatGautam at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for bhatGautam at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></span></a></div>
-      <br><center><span>[ <a id="resume_id" target="_blank" href="gautambhat.github.io/GautamBhat-5.pdf">Resume</a> | <a id="linkedin_id" target="_blank" href="https://www.linkedin.com/in/bhatgautam">LinkedIn</a> | <a id="github_id" target="_blank" href="https://github.com/gautambhat">Github</a>]</span></center>
+      <div style="float:left;padding:3px; "><a href="http://stackoverflow.com/users/2474507/bhatgautam"><span id="so2"><img src="http://stackoverflow.com/users/flair/2474507.png?theme=clean" width="208" height="58" alt="profile for bhatGautam at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for bhatGautam at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></span></a></div>
+      <br><center><span>[ <a id="resume_id" target="_blank" href="gautambhat.github.io/GautamBhat-5.pdf">Resume</a> | <a id="li2" target="_blank" href="https://www.linkedin.com/in/bhatgautam">LinkedIn</a> | <a id="gh2" target="_blank" href="https://github.com/gautambhat">Github</a>]</span></center>
       <br><br><br>
       <h1 style="margin-bottom:0;padding-bottom:0.54em;color:#cc0000;">Gautam Bhat</h1>
     </div>
     <br>
     <p>Hi there! I'm a Master's student at the <a target="_blank" href="http://www.cs.bu.edu">Computer Science</a> department at <a target="_blank" href="http://bu.edu">Boston University</a>'s <a target="_blank" href="https://www.bu.edu/academics/grs/">Graduate School of Arts and Sciences</a> (Graduating May 2017).</p>
-    <p>Here, you can find links to my LinkedIn, Stack Overflow, and Github pages, as well as papers I've co-written but not published.</p>
+    <p>Here, you can find links to my <span id="li1">LinkedIn</span>, <span id="so1">StackOverflow</span>, and <span id="gh1">Github</span> pages, as well as papers I've co-written but not published.</p>
     <p>Check out <a target="_blank" href="http://cs-people.bu.edu/spchin">LISP</a>, Professor Chin's deep learning research group at BU and Draper!</p>
     <hr>
     <h2 style="color:#cc0000;">Interests</h2>
@@ -72,5 +70,19 @@
       </ul>-->
     <br><hr>
     <center><div style="padding:0.7em;font-size:1.5em;">Contact: <b style="color:#cc0000;">gautam</b> "at" <b style="color:#cc0000;">bu</b> "dot" <b style="color:#cc0000;">edu</b></div></center>
+<script>
+	var so1 = document.getElementById("so1");
+	var gh1 = document.getElementById("gh1");
+	var li1 = document.getElementById("li1");
+	var so2 = document.getElementById("so2");
+	var gh2 = document.getElementById("gh2");
+	var li2 = document.getElementById("li2");
+	so1.onmouseover = function() {
+		so2.style.color="#cc0000";
+	}
+	so1.onmouseout = function() {
+		so2.style.color="#6600cc";
+	}
+</script>
   </body>
 </html>
