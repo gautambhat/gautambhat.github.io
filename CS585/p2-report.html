@@ -62,7 +62,9 @@
 				Here is how Affectiva detects and tracks facial features on a video feed to evaluate certain metrics associated with emotions.
 			</p>
 			<!--<script async src="https://jsfiddle.net/affectiva/opyh5e8d/embed/result/"></script>-->
-			<iframe width="100%" height="600" src="http://jsfiddle.net/thebeast05/maL0g7j0/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			<iframe width="100%" height="600" src="https://jsfiddle.net/thebeast05/maL0g7j0/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+				
+			<p>
 				The above is just a demonstration of how quickly one can start developing with Affectiva, as it is a blackbox that implements computer vision algorithms, hence letting the developer work on the application part of the problem at hand. The data we get at every frame can be stored in a file along with its timestamp (to maybe compare with the video, if we ever require human intervention/checking) as input for another program, or for further processing. We are exploring both the Web(Javascript) as well as the C++ SDK to decide which one would be more suited to our project. However, the problem with the SDK is that, with so much data to process, it can run out of memory pretty quickly (~30-45 minutes of running the app). We may also use a machine learning classifier to assist with better emotion classification, such as BrainJS (in case we opt for Javascript), which would run on our data collected from the app.
 			</p>
 			<p>
