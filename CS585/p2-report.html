@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> CS585 : Project Assignment 2 </title>
+
+	</head>
+	<style>
+		html,body{
+			width:100%;
+			margin:0;
+			padding:0;
+		}
+
+		.names {
+			font-size: 1.5em;
+		}
+
+		#container {
+			padding: 1.5em;
+		}
+		p {
+			font-size:1.2em;
+			line-height: 1.3em;
+			text-align: justify;
+		}
+
+		h2 {
+			font-size: 2.5em;
+			
+		}
+
+		h3 {
+			font-size: 2em;
+			color: #cc0000;
+		}
+
+		td {
+			font-size: 1.2em;
+		}
+	</style>
+	<body>
+		<div id="container">
+		<center>
+			<a href="http://www.bu.edu"><img border="0" src="http://www.cs.bu.edu/~betke/images/bu-logo.gif"
+				width="119" height="120"></a>
+		</center>
+		<h3>CAS CS585 - Image and Video Computing - Fall 2016</h3>
+		<h3>Project Assignment - P2</h3>
+			<div class="names">Abhyudaya Alva<br>Cristina Estupinan<br>Gautam Bhat</div>
+			<center><h2>Affectiva-based Face Expression Monitoring and Evaluation</h2></center>
+		<br>
+		<h3>Problem Definition</h3>
+			<p>
+				Use Affectiva to analyze facial expressions of different users watching a video (or doing an assignment), detect where it fails at correctly recognizing emotions, and use this data to devise a more accurate emotion classification model. 	
+			</p>
+		<h3>Motivation & Background Research</h3>
+			<p>
+				Affectiva's software, equipped with their Affdex technology, allows for computer programs to recognize human emotions based on facial cues or physiological responses. While it does a great job at tracking facial landmarks and expressions in an image, it does not always succeed in correctly classifying the emotions associated with those expressions. Our aim is to try and build upon the software's strengths to improve its shortcomings.
+			</p>
+			<p>
+				Here is how Affectiva detects and tracks facial features on a video feed to evaluate certain metrics associated with emotions.
+			</p>
+			<!--<script async src="https://jsfiddle.net/affectiva/opyh5e8d/embed/result/"></script>-->
+			<iframe width="100%" height="600" src="https://jsfiddle.net/thebeast05/maL0g7j0/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>	
+		
+			<p>
+				The above is just a demonstration of how quickly one can start developing with Affectiva, as it is a blackbox that implements computer vision algorithms, hence letting the developer work on the application part of the problem at hand. The data we get at every frame can be stored in a file along with its timestamp (to maybe compare with the video, if we ever require human intervention/checking) as input for another program, or for further processing. We are exploring both the Web(Javascript) as well as the C++ SDK to decide which one would be more suited to our project. However, the problem with the SDK is that, with so much data to process, it can run out of memory pretty quickly (~30-45 minutes of running the app). We may also use a machine learning classifier to assist with better emotion classification, such as BrainJS (in case we opt for Javascript), which would run on our data collected from the app.
+			</p>
+			<p>
+				Previous work has been done on the topic, albeit without Affectiva, such as by McDaniel et al [1], who investigated emotions that accompany deep-level learning of conceptual material. They captured videos of faces of students while interacted with tutoring software to learn a concepts in computer literacy topics. They evaluated affective states via human supervision in order to devise a model of automatic detection. Valstar and Pantic [2] detected emotions through subtle expressions and facial motions by detecting and passing Action Units as input to a rulebase and ANNs. They reckon that, detecting AUs instead of emotions facilitates for facial expression detection that is independent of culture-dependent interpretation. Whitehill et al, in [3], used machine learning to develop automatic engagement detectors, to figure out whether facial expressions could reliably judge human engagement. This is of interest, particularly because the paper was focused on student engagement, something that is one of the primary targets of our project, which if implemented successfully could be used in developing a model to detect student frustration using Affectiva. We aim to study the above papers more, in order to get the best results out of our project.  
+			</p>
+			
+		<h3>Acknowledgements</h3>
+			<p>
+				We would like to thank the teaching fellow for our course, Elham Saraee, for her continued support and guidance in our project.
+			</p>
+		<h3>Papers and Sources Referenced</h3>
+			<p>
+			<table>
+				<tr>
+					<td>[1]</td>
+					<td>McDaniel, B. T., D’Mello, S. K., King, B. G., Chipman, P., Tapp, K., &amp; Graesser, A. C. (2007). Facial Features for Affective State Detection in Learning Environments. In D. S. McNamara &amp; J. G. Trafton (Eds.), Proceedings of the 29th Annual Cognitive Science Society (pp. 467-472). Austin, TX: Cognitive Science Society. [talk]</td>
+				</tr>
+				<tr>
+					<td>[2]</td>
+					<td>Valstar, M. F., Pantic, M. (2006) Biologically vs. Logic Inspired Encoding of Facial Actions and Emotions in Video. In 2006 IEEE International Conference on Multimedia and Expo (pp. 325-328).</td> 
+				</tr>
+				<tr>
+					<td>[3]</td>
+					<td>Whitehill J, Serpell Z, Lin Y-C, Foster A, Movellan J. The faces of engagement: Automatic recognition of student engagement from facial expressions. 2014.</td>
+				</tr>
+				<tr>
+					<td>  -</td><td>Affectiva Developer Portal : <a href="http://developer.affectiva.com/v3_1/javascript/" target="_blank">http://developer.affectiva.com/v3_1/javascript/</a></td>
+				</p>
+	</div>
+	</body>
+
+</html>
