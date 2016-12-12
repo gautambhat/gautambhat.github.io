@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ui/pages/Message.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ui/pages/Message.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from 'react';
+import MessageText from '../components/message_text.jsx';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Messages } from '/imports/api/message/messages.js';
+import { Control } from '/imports/api/control/control.js';
+import { MessageRooms } from '/imports/api/message/messageRooms';
+
+/**
+ * Message class
+ * @class
+ */
+class Message extends Component {
+    constructor(props){
+    super(props);
+    this.state = {value: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    var value = this.state.value.trim()
+
+    if (event.key === 'Enter' || event.type === "click") {
+      if(value == ''){
+        console.log('input value cannot be null');
+        return 0;
+      }
+
+      // new msgRoom
+      var msgRoom = MessageRooms.findOne({userId1: Meteor.userId(), userId2: this.props.params.id});
+
+      this.props.clientSendMessage(this.props.params.id, value, msgRoom);
+      this.setState({value: ''});
+      setTimeout(this.scrollBottom, 10)
+    }
+  }
+
+  scrollBottom() {
+    var objDiv = document.getElementById("msg_context_id");
+    objDiv.scrollTop = objDiv.scrollHeight;
+  }
+
+  createMessageText(toUserImgUrl){
+    //watch out, here is the trick to pass toUserImgUrl into map
+    return function(m){
+      return (&lt; MessageText {...m}
+      imgSrc = {toUserImgUrl}
+      key = {m._id}
+      />)
+    }
+  }
+
+  render() {
+    // Object destructuring instead of const loading = this.props.loading
+    const { loading } = this.props;
+
+    return loading ? (
+      &lt;div> Loading &lt;/div>
+    ): (
+      &lt;div className="msg_page_container">
+
+        &lt;h1>&lt;img width="50" height="50" src={this.props.toUserImgUrl}alt="" className="circle"/> {this.props.name}&lt;/h1>
+        &lt;ul className="collection" id="msg_context_id">
+
+          {this.props.messages.map(this.createMessageText(this.props.toUserImgUrl))}
+
+      &lt;/ul>
+
+      &lt;div className="row msg_input_div">
+        &lt;div className="input-field col s10">
+          &lt;textarea
+            value={this.state.value}
+            onChange={this.handleChange}
+            onKeyPress={this.handleSubmit}
+            className="materialize-textarea">&lt;/textarea>
+        &lt;/div>
+        &lt;div className="input-field col s2">
+          &lt;a onClick={this.handleSubmit} className="btn-floating btn-large waves-effect waves-light">&lt;i className="material-icons">send&lt;/i>&lt;/a>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  )
+}
+}
+
+export default createContainer((props) => {
+  var toUserId = props.params.id;
+  var singleUserSub = Meteor.subscribe('singleUser', toUserId);
+  var toUser = Meteor.users.findOne(toUserId);
+  Meteor.subscribe('messagesBetweenUsers', toUserId);
+  var messageRoomSub = Meteor.subscribe('messageRoom', toUserId);
+
+  // We have *3* subscriptions here already.  Need to refactor to use aggregate/composition package
+  return {
+     // If the subscription is not ready yet, return nothing since user not available yet on client. We are ;padoing
+     loading: !singleUserSub.ready() &amp;&amp; !messageRoomSub.ready(),
+     messages: Messages.find({
+      "$or": [{
+        toUserId: toUserId,
+        fromUserId: Meteor.userId()
+      }, {
+        toUserId: Meteor.userId(),
+        fromUserId: toUserId
+      }]
+    }).fetch().map((m) => {
+      m.isOwner = (m.fromUserId == Meteor.userId()) ? true : false;
+      return m;
+    }),
+    toUserImgUrl: toUser &amp;&amp; toUser.imageUrl(),
+    // If toUser is undefined, return nothing.  If defined try to use name.
+    // fall back to 'Unknown Name'
+    name: toUser &amp;&amp; toUser.profile.name || 'Unknown Name',
+    clientSendMessage: Control.clientSendMessage
+  };
+}, Message);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Image.html">Image</a></li><li><a href="Message.html">Message</a></li><li><a href="MessageRoom.html">MessageRoom</a></li><li><a href="MessageRoomsPopout.html">MessageRoomsPopout</a></li><li><a href="Messages.schema.html">schema</a></li><li><a href="module.exports.html">exports</a></li><li><a href="profile.html">profile</a></li><li><a href="Profile_.html">Profile</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_clientEditProfile">_clientEditProfile</a></li><li><a href="global.html#_clientGetLatestMsg">_clientGetLatestMsg</a></li><li><a href="global.html#_clientSendMessage">_clientSendMessage</a></li><li><a href="global.html#_serverNewUser">_serverNewUser</a></li><li><a href="global.html#Controllers">Controllers</a></li><li><a href="global.html#Images">Images</a></li><li><a href="global.html#MessageRooms">MessageRooms</a></li><li><a href="global.html#Models">Models</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Dec 12 2016 16:01:00 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
