@@ -1,0 +1,87 @@
+GAUTAM BHAT
+-------------------------------------------------------------------------------------
+89 Chester St Apt C4, Allston MA 02134
+(857)272-4311
+gautam@bu.edu
+gautambhat.github.io
+
+
+EDUCATION
+-------------------------------------------------------------------------------------
+BOSTON UNIVERSITY, GRADUATE SCHOOL OF ARTS AND SCIENCES, BOSTON, MA
+Degree: MS, Expected Graduation:    May 2017
+Major:  Computer Science,   GPA:    3.78/4.0
+Relevant Courses:   Advanced Algorithms
+                    Databases
+                    Machine Learning
+                    Computer Networks
+                    Image and Video Computing
+                    Software Engineering
+                    Distributed Systems
+                    Computational Audio
+
+SHIV NADAR UNIVERSITY, COLLEGE OF ENGINEERING, INDIA
+Degree: B.Tech, Graduated: June 2015
+Major:  Computer Science and Engineering, GPA:  7.44/10
+Undergraduate Thesis:   Detecting and Analyzing Communities in Social Network Graphs for Targeted Marketing (Social Network Analysis)
+
+
+SKILLS AND ABILITIES
+-------------------------------------------------------------------------------------
+Proficient in:  Java
+                PHP
+                Javascript
+                MySQL
+                HTML
+                CSS
+                jQuery
+                Git
+                MATLAB
+Familiar with:  C
+                C++
+                OpenCV
+                Python
+                Scikit-learn
+                MapReduce
+                Go
+                React
+                Meteor.js
+                MongoDB
+                Laravel
+                PostgreSQL
+
+
+EXPERIENCE
+-------------------------------------------------------------------------------------
+TEACHING ASSISTANT, Department of Computer Science, Boston University, Boston, MA
+Duration:   May 2016 - Present
+Worked as teaching assistant and grader for three courses, including Machine Learning.
+Instructed two lab sections over the summer, and three in the fall, by preparing lab material and code, leading discussions, and holding office hours to help students understand concepts outside of class.
+
+SOFTWARE DEVELOPER INTERN, ColoredCow Consulting, Gurgaon, India
+Duration:   May 2014 - October 2014
+Worked in the back-end development of an event-hosting portal for chefs, using Laravel framework for PHP.
+
+SUMMER INTERN, NCR Corporation, Gurgaon, India
+Duration:   May 2013 - July 2013
+Created a skills repository web application and integrated it with LinkedIn APIs.
+Application served as an ‘expert locator’ for employees in the corporation.
+
+
+RELEVANT PROJECTS
+-------------------------------------------------------------------------------------
+Meetcute - A Modern Dating App:                     Working in an agile team to develop a web and mobile-based dating app with neural network-based profile matching and recommendations. (React, Meteor.js)
+
+Face Expression Analysis During Student Learning:   Utilized Affectiva to visually monitor students, and devised a more accurate emotion classification model from the collected data using neural networks and logistic regression.(C++,Python)
+
+Object Recognition and Tracking:                    Utilized techniques in computer vision such as segmentation, thresholding, and template matching to identify and track objects in various scenes, as well as recognize hand gestures. (OpenCV)
+
+NN-based Poker Bot:                                 Implemented a single-hidden layer feedforward neural network for poker hand classification, achieving 94.8% accuracy, and used it to devise a playing strategy against human opponents. (MATLAB)
+
+Web-based Photo Social Sharing App:                 Designed, implemented and documented a database system for a web-based photo social sharing application, as a part of a course project. (PHP, Javascript, MariaDB)
+
+Fantasy Football:                                   Created an interactive fantasy soccer web application for the intra-university soccer league, with 20% of all students registering with the app within 24 hours. (PHP, Javascript, jQuery, MySQL)
+
+Conference Room Booking System:                     Developed a conference room booking web application for the university administration. (PHP, Javascript, jQuery, MySQL)
+
+Music Management Utility:                           Made a music management utility for bash shell, to search music, create playlists, and play songs via VLC extension, as a part of a course project. (shell script)
