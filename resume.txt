@@ -66,7 +66,7 @@ Application served as an ‘expert locator’ for employees in the corporation.
 
 RELEVANT PROJECTS
 -------------------------------------------------------------------------------------
-MapReduce Library for Go:	                          Built	a	MapReduce	library	to implement	word	count	in sequential	and distributed	modes	of	operation,	and	wrote a	master	program	to	hand out	tasks	to	workers and	handle failures. (Go)
+MapReduce Library for Go:                           Built a MapReduce library to implement word count in sequential and distributed modes of operation, and wrote a master program to hand out tasks to workers and handle failures. (Go)
 
 Meetcute - A Modern Dating App:                     Working in an agile team to develop a web and mobile-based dating app with neural network-based profile matching and recommendations. (React, Meteor.js)
 
