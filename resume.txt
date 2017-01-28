@@ -33,13 +33,13 @@ Proficient in:  Java
                 jQuery
                 Git
                 MATLAB
-Familiar with:  C
-                C++
+Familiar with:  C++
                 OpenCV
                 Python
                 Scikit-learn
                 MapReduce
                 Go
+                Hadoop
                 React
                 Meteor.js
                 MongoDB
@@ -66,6 +66,8 @@ Application served as an ‘expert locator’ for employees in the corporation.
 
 RELEVANT PROJECTS
 -------------------------------------------------------------------------------------
+MapReduce Library for Go:	                          Built	a	MapReduce	library	to implement	word	count	in sequential	and distributed	modes	of	operation,	and	wrote a	master	program	to	hand out	tasks	to	workers and	handle failures. (Go)
+
 Meetcute - A Modern Dating App:                     Working in an agile team to develop a web and mobile-based dating app with neural network-based profile matching and recommendations. (React, Meteor.js)
 
 Face Expression Analysis During Student Learning:   Utilized Affectiva to visually monitor students, and devised a more accurate emotion classification model from the collected data using neural networks and logistic regression.(C++,Python)
