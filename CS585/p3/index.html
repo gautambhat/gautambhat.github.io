@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> CS585 : Project Report </title>
+
+	</head>
+	<style>
+		html,body{
+			width:100%;
+			margin:0;
+			padding:0;
+		}
+
+		.names {
+			font-size: 1.5em;
+		}
+
+		#container {
+			padding: 1.5em;
+		}
+		p {
+			font-size:1.2em;
+			line-height: 1.3em;
+			text-align: justify;
+		}
+
+		h2 {
+			font-size: 2.5em;
+			
+		}
+
+		h3 {
+			font-size: 2em;
+			color: #cc0000;
+		}
+
+		h4 {
+			font-size: 1.6em;
+			color: #cc0000;
+		}
+h5 {
+			font-size: 1.2em;
+			color: #cc0000;
+		}
+
+		td {
+			font-size: 1.2em;
+		}
+		li {
+font-size:1.2em;
+			line-height: 1.3em;
+			text-align: justify;
+}
+	</style>
+	<body>
+		<div id="container">
+		<center>
+			<a href="http://www.bu.edu"><img border="0" src="http://www.cs.bu.edu/~betke/images/bu-logo.gif"
+				width="119" height="120"></a>
+		</center>
+		<h3>CAS CS585 - Image and Video Computing - Fall 2016</h3>
+		<h3>Project Report - P3</h3>
+			<div class="names">Gautam Bhat<br>Cristina Estupinan<br>Abhyudaya Alva</div>
+			<center><h2>Affectiva-based Face Expression Monitoring and Evaluation - A Student-Learning Analysis</h2></center>
+		<br>
+		<h3>Overview</h3>
+			<p>
+				We used Affectiva to analyze facial expressions of students while being engaged in a learning task, and tried to detect where it fails at correctly recognizing emotions, and used this data to devise a more accurate emotion classification model. Since our analysis involves an external tool, the intial task was to thoroughly test and validate the tool and its accuracy. We started by testing Affectiva's performance in evaluating facial expressions and validating the results it provided. In order to analyse the student videos we recorded videos of ourselves being engaged in various learning tasks. We annotated the videos into different binary classes for 'Frustrated', 'Engaged' and 'Tired' and tried to build a model that can help us draw some meaningful conclusions from the dataset provided by Affectiva.	
+			</p>
+<center><img src="img5.png""></center>
+		<h3>Experiments</h3>
+<img src="img1.png" height="200"><img src="img2.png" height="200"><img src="img3.png" height="200"><img src="img4.png" height="200">
+			<p>
+				We used the Affdex C++ SDK to analyse videos and images, which can be found <a href="https://drive.google.com/open?id=0B6IKyWPnwowAa0dOdzFhQmJpdlE" target="_blank">here</a>, and stored the data it provided in a csv file for further analysis. 
+			</p>
+			<p>
+			The dataset for logistic regression consisted of affective output for facial action units that were obtained by running Affectiva on student learning videos. For various facial action units Affectiva gives a score from 1-100 along with it’s score for emotions and emojis etc. Since the video classifier for emotions on Affectiva considers the output of previous frame we do not consider this as the ground truth since it is possibly based on the interpretation of output on previous frame. We run the logistical regression for the ouput of only the facial action units which Affectiva measures throughout the video. The following fields form our explanatory variable for logistic regression:	
+			</p>
+<ul>
+<li>'smile'</li>
+<li>'innerBrowRaise'</li>
+<li>'browRaise'</li>
+<li>'browFurrow'</li>
+<li>'noseWrinkle'</li>
+<li>'upperLipRaise'</li>
+<li>'lipCornerDepressor'</li>
+<li>'chinRaise'</li>
+<li>'lipPucker'</li>
+<li>'lipPress'</li>
+<li>'lipSuck'</li>
+<li>'mouthOpen'</li>
+<li>'smirk'</li>
+<li>'eyeClosure'</li>
+<li>'eyeWiden'</li>
+<li>'cheekRaise'</li>
+<li>'lidTighten'</li>
+<li>'dimpler'</li>
+<li>'lipStretch'</li>
+<li>'jawDrop'</li>
+
+
+</ul>
+<p>We annotated our videos into following classes:</p>
+<table>
+<tr><th>Frustrated</th><th>Tired</th><th>Engaged</th><th>Class</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>2</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>3</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>4</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>5</td></tr>
+<tr><td>1</td><td>1</td><td>0</td><td>6</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>7</td></tr>
+</table>
+
+<p>For neural networks, we aggregated samples every 0.4 seconds into a single sample using their mean, and concatated 6 consecutive samples into one feature vector in order to show the relation of dependence among frames and features. This lead to a multilayer perceptron architure of 276 input nodes, 150 hidden nodes, and output nodes. We trained our neural network on the data by splitting the samples into training and testing.
+</p>
+
+<h3>Results</h3>
+<h4>Affectiva</h4>
+<p>Affectiva detected feature points with great accuracy, especially in straight oriented images. However, it was not always succesful with classifying emotions and detecting action units correctly all the time.  We found it that didn’t recognize faces in 82.61% of side-view images, and didn’t recognize 43.48% images, regardless of view. Similarly, we found that Affectiva fails during video when facial orientation changes. Also, it was interesting to note that when we brought our face closer or away from the video, affectiva took that as a change of expression, and hence that affected its performance.
+The data summarizes the same:</p>
+<img src="imgdata.png">
+<p>During video analysis, we found that Affectiva processed the videos at around half the actual framerate of the videos, leading to loss of some frames in terms of collecting data, but it was to be aggregated later regardless.</p>
+
+<h4>Logistic Regression</h4>
+<p>The results of logistic regression are as follows:</p>
+<img src="LogisticRegressionOutput.png">
+<p>As we can see from the results inner Brow Raise is negatively correlated with frustration and lid tighten is positively correlated with frustration.</p>
+<h5>Frustration prediction based on Data points of entire dataset</h5>
+<table>
+<tr><th>Frustrated</th><th>Tired</th><th>Engaged</th></tr>
+<tr><td><img src="FrustrationOnSeparateDataset.png"></td><img src="TiredROC.png"><td></td><td><img src="EngagedROC.png"></td></tr>
+</table>
+
+<p>While we got better classifier in the initial phase for frustration, the classifier fails on cross validation on entirely new dataset. The ROC curve for our test results for frustration is as follows:
+</p>
+<img src="FrustrationOnSeparateDataset.png">
+
+
+<h4>Neural Network</h4>
+<p>The actual samples after overall processing of data was reduced to ~2000, from nearly ~20000. The training on this data yielded an accuracy of 92.91%, with area under ROC curve = 78.1%. The model may have overfit the data, however, that would be solved with a larger and varying dataset. Also, we were most intersted in precision and sensitivity of our model, with the numbers at 95% and 57% respectively. It is important to note that the classes were not evenly distributed, which may have affecte the F-Measure, which is just the harmonic mean of sensitivity and precision. Hyperparametric tuning was not done, and that implementation may improve results.</p>
+
+<img src="roc.png">
+<img src="confusion.png">
+
+<h3>Discussion and Conclusions</h3>
+<p>From our project, we feel that Affectiva, despite being state-of-the-art in computer vision and face detection, may not be enough on its own to solve the frustration detection problem. The multilayer perceptron model, if trained with A LOT of more data, and coupled with Affdex, would be a really effective model to detect student frustration in real-time, by taking data from affectiva and predicting it using the trained weights. <br>The most important improvement we can make to our project is gathering more and more data, and properly labelling it for training our devised model. Other points are summarized below.</p>
+
+<ul>
+<li>Better hand-tracking without affecting face detection could could give more physiological cues.</li>Precision(0.95) and Sensitivity(0.57) are important metrics for our system.<li>Not able to replicate results of [4]; Our Logistic Regression model shows that frustration is negatively    correlated with inner brow raise and outer brow raise. It also positively correlates with lid tighten.</li>
+</ul>
+			
+			
+		<h3>Acknowledgements</h3>
+			<p>
+				We would like to thank the teaching fellow for our course, Elham Saraee, for her continued support and guidance in our project.
+			</p>
+
+<h3>Sources of Images and Code</h3>
+<li><a href="https://drive.google.com/open?id=0B6IKyWPnwowAa0dOdzFhQmJpdlE" target="_blank">Images</a></li>
+<li><a href="https://github.com/gitaalva/samplerepo" target="_blank">Code</a></li>
+
+		<h3>Papers and Sources Referenced</h3> 
+			<p>
+			<table>
+				<tr>
+					<td>[1]</td>
+					<td>McDaniel, B. T., D’Mello, S. K., King, B. G., Chipman, P., Tapp, K., &amp; Graesser, A. C. (2007). Facial Features for Affective State Detection in Learning Environments. In D. S. McNamara &amp; J. G. Trafton (Eds.), Proceedings of the 29th Annual Cognitive Science Society (pp. 467-472). Austin, TX: Cognitive Science Society. [talk]</td>
+				</tr>
+				<tr>
+					<td>[2]</td>
+					<td>Valstar, M. F., Pantic, M. (2006) Biologically vs. Logic Inspired Encoding of Facial Actions and Emotions in Video. In 2006 IEEE International Conference on Multimedia and Expo (pp. 325-328).</td> 
+				</tr>
+				<tr>
+					<td>[3]</td>
+					<td>Whitehill J, Serpell Z, Lin Y-C, Foster A, Movellan J. The faces of engagement: Automatic recognition of student engagement from facial expressions. 2014.</td>
+				</tr>
+				<tr>
+					<td>  -</td><td>Affectiva Developer Portal : <a href="http://developer.affectiva.com/v3_1/javascript/" target="_blank">http://developer.affectiva.com/v3_1/javascript/</a></td></tr>
+				<tr>
+					<td>[4]</td>
+					<td>Automatically Recognizing Facial Expression: Predicting Engagement and Frustration Joseph F. Grafsgaard1 , Joseph B. Wiggins1 , Kristy Elizabeth Boyer1 , Eric N. Wiebe2 , James C. Lester</td>
+				</tr>
+				</p>
+	</div>
+	</body>
+
+</html>
