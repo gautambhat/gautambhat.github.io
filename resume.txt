@@ -2,84 +2,81 @@ GAUTAM BHAT
 -------------------------------------------------------------------------------------
 **Contact Information Masked On This Page**
 
+
 EDUCATION
 -------------------------------------------------------------------------------------
 BOSTON UNIVERSITY, GRADUATE SCHOOL OF ARTS AND SCIENCES, BOSTON, MA
-Degree: MS, Expected Graduation:    May 2017
-Major:  Computer Science,   GPA:    3.78/4.0
-Relevant Courses:   Advanced Algorithms
-                    Databases
-                    Machine Learning
-                    Computer Networks
-                    Image and Video Computing
-                    Software Engineering
-                    Distributed Systems
-                    Computational Audio
+Degree: MS, Expected Graduation: May 2017
+Major: Computer Science, GPA: 3.8/4.0
 
 SHIV NADAR UNIVERSITY, COLLEGE OF ENGINEERING, INDIA
 Degree: B.Tech, Graduated: June 2015
-Major:  Computer Science and Engineering, GPA:  7.44/10
-Undergraduate Thesis:   Detecting and Analyzing Communities in Social Network Graphs for Targeted Marketing (Social Network Analysis)
+Major: Computer Science and Engineering
+Undergraduate Thesis: Detecting and Analyzing Communities in Social Network Graphs for Targeted Marketing (Social Network Analysis)
 
 
 SKILLS AND ABILITIES
 -------------------------------------------------------------------------------------
-Proficient in:  Java
-                PHP
-                Javascript
-                MySQL
-                HTML
-                CSS
-                jQuery
-                Git
-                MATLAB
-Familiar with:  C++
-                OpenCV
-                Python
-                Scikit-learn
-                MapReduce
-                Go
-                Hadoop
-                React
-                Meteor.js
-                MongoDB
-                Laravel
-                PostgreSQL
+Proficient in: Java, Typescript, React, Javascript, MySQL, HTML, CSS, jQuery, Git, PostgreSQL, Redux, Docker, Node.js, Express.js, Jest, Enzyme, PHP
+
+Familiar with: TypeORM, Memcached, AWS, OpenCV, Python, Scikit-learn, MapReduce, Go, MongoDB, Laravel, Selenium
 
 
 EXPERIENCE
 -------------------------------------------------------------------------------------
-TEACHING ASSISTANT, Department of Computer Science, Boston University, Boston, MA
-Duration:   May 2016 - Present
-Worked as teaching assistant and grader for three courses, including Machine Learning.
-Instructed two lab sections over the summer, and three in the fall, by preparing lab material and code, leading discussions, and holding office hours to help students understand concepts outside of class.
+### Software Engineer
+**Blend Labs**, San Francisco, CA – (Jun 2020 - Mar 2023)
 
-SOFTWARE DEVELOPER INTERN, ColoredCow Consulting, Gurgaon, India
-Duration:   May 2014 - October 2014
-Worked in the back-end development of an event-hosting portal for chefs, using Laravel framework for PHP.
+- Played a crucial role in delivering time-sensitive features for key customers, ensuring successful go-live events and meeting critical deadlines.
+- Mentored junior developers and interns through frequent pair programming sessions, fostering skill development and knowledge sharing within the team.
+- Collaborated with senior engineers to define roadmaps, feature priorities, and drive the successful execution of projects.
+- Spearheaded the development of a loan duplication workflow, which was adopted by all production customers within a year, significantly streamlining loan officers' ability to copy loan data between applications in mere seconds.
+- Led the creation of the loan scenario sharing workflow, a time-saving feature that enabled lenders to quickly generate and compare loan products side-by-side, allowing borrowers to choose from financing options and cash-to-close variances. This feature was adopted by 100+ customers, including multiple top 10 US banks, and unblocked the national rollout for one of Blend's top strategic customers. Utilized React/Redux and PostgreSQL to build a user-friendly interface for sharing multiple loan options from a single application ([Blend Loan Officer Toolkit](https://blend.com/products/features/loan-officer-toolkit/)).
+- Consolidated business logic across multiple frontends into a single microservice, reducing code duplication and maintenance efforts.
+- Optimized the production DB by removing bloat, deleting 2.5M rows without downtime, and improving database performance.
+- Improved developer productivity by leading efforts to document features and standardizing node debugging capabilities for multiple microservices.
+- Established as the team's go-to expert for technical help and context, fostering collaboration and knowledge sharing.
 
-SUMMER INTERN, NCR Corporation, Gurgaon, India
-Duration:   May 2013 - July 2013
-Created a skills repository web application and integrated it with LinkedIn APIs.
-Application served as an ‘expert locator’ for employees in the corporation.
+
+### Software Engineer, Applications
+**C3.ai**, Redwood City, CA – (Jul 2017 - April 2020)
+
+- Implemented custom semantic version range parsers in the C3 platform, streamlining the upgrade path for dependencies and improving the deployment experience for customers and internal teams.
+- Architected on-premise trial for banking client, reducing application review time from 3 months to 1 day, leading to over $1M in subsequent projects, and enabling business expansion in Asia.
+- Built low-code/no-code Data Studio, enabling users to rapidly set up, test, and preview data ingestion pipelines.
+- Developed metadata-driven React components for ML Studio, reducing configuration time and improving user experience.
+- Enhanced code coverage reporting for JavaScript tests on the CI pipeline, contributing to the team's achievement of a 90% test coverage goal for all modules.
 
 
 RELEVANT PROJECTS
 -------------------------------------------------------------------------------------
-MapReduce Library for Go:                           Built a MapReduce library to implement word count in sequential and distributed modes of operation, and wrote a master program to hand out tasks to workers and handle failures. (Go)
+MapReduce Library for Go: Built a MapReduce library to implement word count in sequential and distributed modes of operation, and wrote a master program to hand out tasks to workers and handle failures. (Go)
 
-Meetcute - A Modern Dating App:                     Working in an agile team to develop a web and mobile-based dating app with neural network-based profile matching and recommendations. (React, Meteor.js)
+Meetcute - A Modern Dating App: Working in an agile team to develop a web and mobile-based dating app with neural network-based profile matching and recommendations. (React, Meteor.js)
 
-Face Expression Analysis During Student Learning:   Utilized Affectiva to visually monitor students, and devised a more accurate emotion classification model from the collected data using neural networks and logistic regression.(C++,Python)
+Face Expression Analysis During Student Learning: Utilized Affectiva to visually monitor students, and devised a more accurate emotion classification model from the collected data using neural networks and logistic regression. (C++, Python)
 
-Object Recognition and Tracking:                    Utilized techniques in computer vision such as segmentation, thresholding, and template matching to identify and track objects in various scenes, as well as recognize hand gestures. (OpenCV)
+Object Recognition and Tracking: Utilized techniques in computer vision such as segmentation, thresholding, and template matching to identify and track objects in various scenes, as well as recognize hand gestures. (OpenCV)
 
-NN-based Poker Bot:                                 Implemented a single-hidden layer feedforward neural network for poker hand classification, achieving 94.8% accuracy, and used it to devise a playing strategy against human opponents. (MATLAB)
+NN-based Poker Bot: Implemented a single-hidden layer feedforward neural network for poker hand classification, achieving 94.8% accuracy, and used it to devise a playing strategy against human opponents. (MATLAB)
 
-Web-based Photo Social Sharing App:                 Designed, implemented and documented a database system for a web-based photo social sharing application, as a part of a course project. (PHP, Javascript, MariaDB)
+Web-based Photo Social Sharing App: Designed, implemented and documented a database system for a web-based photo social sharing application, as a part of a course project. (PHP, JavaScript, MariaDB)
 
-Fantasy Football:                                   Created an interactive fantasy soccer web application for the intra-university soccer league, with 20% of all students registering with the app within 24 hours. (PHP, Javascript, jQuery, MySQL)
+Fantasy Football: Created an interactive fantasy soccer web application for the intra-university soccer league, with 20% of all students registering with the app within 24 hours. (PHP, JavaScript, jQuery, MySQL)
 
-Conference Room Booking System:                     Developed a conference room booking web application for the university administration. (PHP, Javascript, jQuery, MySQL)
+Conference Room Booking System: Developed a conference room booking web application for the university administration. (PHP, JavaScript, jQuery, MySQL)
 
-Music Management Utility:                           Made a music management utility for bash shell, to search music, create playlists, and play songs via VLC extension, as a part of a course project. (shell script)
+Music Management Utility: Made a music management utility for bash shell, to search music, create playlists, and play songs via VLC extension, as a part of a course project. (Shell script)
+
+
+ADDITIONAL INFORMATION
+-------------------------------------------------------------------------------------
+- GitHub: [github.com/gautambhat](https://github.com/gautambhat)
+- LinkedIn: [linkedin.com/in/bhatgautam](https://www.linkedin.com/in/bhatgautam/)
+- Languages: English (fluent), Hindi (native)
+- Hobbies: Playing soccer, playing guitar, going on scenic road trips, hiking, prog music, futile attempts at pondering the true nature of our reality
+
+
+REFERENCES
+-------------------------------------------------------------------------------------
+Available upon request
